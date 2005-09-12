@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<daodefinition version="1">
+ <datasource>
+   <tables>
+      <table name="email" tablename="email" primary="yes" />
+      <table name="email_cat" tablename="email_cat" join="inner" />
+   </tables>
+   <connection name="annuaire" />
+ </datasource>
+
+ <properties>
+  <property name="id" fieldName="id"
+        caption="Identifiant"
+        type="autoincrement"
+        pk="true"
+        required="yes"
+        table="email"
+         />
+  <property name="id_cat" fieldName="id_cat"
+        caption="Clé étrangre pour la catégorie"
+        type="int"
+        required="yes"
+        fktable="email_cat"
+        fkfieldname="id"
+         />
+  <property name="id_pers" fieldName="id_pers"
+        caption="id de la personne"
+        type="int"
+        required="yes"
+        table="email"
+         />
+  <property name="valeur" fieldName="des"
+        caption="Valeur de l'email"
+        type="string"
+        required="no"
+        table="email"
+         />
+  <property name="categorie" fieldName="des"
+        caption="Nom de la catérogie"
+        type="string"
+        required="no"
+        table="email_cat"
+         />
+  <property name="defaut" fieldName="defaut"
+        caption="Email par défaut pour une personne"
+        type="int"
+        required="no"
+        table="email"
+         />
+ </properties>
+</daodefinition>

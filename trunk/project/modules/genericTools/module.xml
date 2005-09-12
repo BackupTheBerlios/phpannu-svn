@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<moduledefinition>
+    <general>
+        <default name="genericTools" descriptioni18n="messages.moduleDescription"/>
+        <package name="copix" version="2.2" />
+    </general>
+</moduledefinition>

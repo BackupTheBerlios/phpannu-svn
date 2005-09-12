@@ -1,0 +1,75 @@
+TODO list de Copix
+==================
+
+Pour la version 2.3
+-------------------
+- mettre à jour la documentation
+- installer la documentation sur le site officiel
+- vérifier les liens dans la page welcome du module welcome.
+- verifier, mettre à jour les commentaires, verifier la présence des bandeaux de copyright/licence
+- Nettoyer le code obsolète que l'on peut trouver encore dans certains fichiers. (messagei18n, classes dans profile, ...)
+- profiles : amélioration à faire dans les DAO -> remplacer les createSearchParams par des methodes DAO
+- revoir le plugin significanturl
+- rajouter le support de l'attribut prefix pour les urls significatifs
+- module.xml : renommage de certaine balises type "parametre" pour eviter des confusions
+- module.xml, <default> : renommage ?
+- module.xml, <event> : utilisé à la fois dans <launch> et dans <listener> mais avec une def différente -> risque de confusion
+- CopixForms : gestion de formulaire simplifiée, pouvant reposer sur CopixDAO
+- Revoir CopixHTMLHeader : ne génère pas du code en conformité avec certaines DTD
+- Gestion des lobs pour driver oci8
+- Créer la balise Smarty ResultSet pour parcourir les ensemble de résultat "fetchables"
+- Compléter l'API profile
+- refonte des plugins smarty popup (c'est une horreur niveau respect standards et accessibilité)
+   nouveau plugin popup : pas de parametres sur le design (c'est la css qui s'en occupe)
+      la popup doit etre en dur dans la page et non générée par le javascript
+      le javascript ne se charge que d'afficher/ faire disparaitre
+      <div id="mapopup"> bla bla</div>
+
+      <mabalise {showPopup id=mapopup mode=follow} />
+      (mode=follow ->la popup suit les mouvements de la souris
+      mode=nofollow -> la popup s'affiche suivant la CSS)
+      en cours de dev
+
+Pour Copix  3.0, (version PHP5)
+-------------------------------
+
+SimpleXML passé "natif"
+Fichiers de descriptions en XML
+Exceptions dans la couche base de données
+revoir tout les passages par référence, et utiliser le clonage si nécessaire...
+utiliser le système d'exception pour la gestion des erreurs copix
+indiquer l'accessibilité des membres des classes (private,public, protected...)
+revoir toutes les classes utilisant des singletons (membres statiques)
+voir optimisation d'appel de méthode en utilisant les possibilités du déréferencement
+refaire tout les constructeurs, et ajouter des destructeurs
+
+Pour le futur, idées en vrac...
+-------------------------------
+
+**** smarty
+
+- Tag img_link ou un truc du style.
+   Objet: Création d'un lien, avec une image et un texte, gen XHTML.
+   du style:
+   {link src=path/img caption="cliquez ici pour" alternative="l'image href=here_we_go.php" }
+
+**** core
+- Log4PHP, reprendre le même système que log4j ?
+
+- Dans la configuration, rajouter une option autoload_plugin, autoload_module_plugins
+  pour charger automatiquement les plugins trouvés.
+  Utiliser à ce niveau un cache de recherche. (si fichier de cache existe, alors utilisé, sinon,
+  création du fichier)
+
+- Dans la configuration, rajouter un devel/production pour les options classiques (showRequest, ...)
+
+- Un plugin de controle des entrées (Expressions régulières pour éviter les SQLInjection, Cross scripting, ...)
+
+- Un plugin permettant de valider les formulaires (ouverture du formulaire,
+ le plugin "ouvre" la possibilité de recevoir le formulaire. Page de réception du formulaire,
+ le plugin accepte le formulaire, le plugin ferme l'acceptation du formulaire)
+ Le but du jeu ici est d'éviter le brut force.
+
+- Faire un petit schéma pour le cheminement de la requête.
+
+- Tests unitaires avec PHPUnit

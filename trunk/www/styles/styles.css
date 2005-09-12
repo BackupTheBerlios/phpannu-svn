@@ -1,0 +1,7 @@
+@import url(copix.css);
+
+/* uncomment next line if you use calendar plugin smarty */
+@import url(dyncalendar.css);
+
+/* uncomment next line if you use tooltip plugin smarty */
+@import url(tooltip.css);

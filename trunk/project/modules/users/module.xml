@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<moduledefinition>
+    <general>
+        <default name="users" descriptioni18n="users.moduleDescription" />
+        <package name="copix" version="2.2" />
+    </general>
+    <dependencies>
+        <dependency name="parameters" kind="module"/>
+    </dependencies>
+</moduledefinition>

@@ -1,0 +1,36 @@
+<form action="<?php echo CopixURL::get ('users|admin|list'); ?>" method="post">
+   <input type="text" name="pattern" value="<?php echo htmlentities ($pattern); ?>" />
+   <input type="submit" value="<?php echo CopixI18N::get ('copix:common.buttons.search'); ?>" />
+</form>
+<?php
+   if (count ($arUsers)) {
+?>
+<table class="CopixTable">
+  <thead>
+  <tr>
+  <?php foreach ($userProperties as $name=>$propertyInformations) { ?>
+   <th><?php echo CopixI18N::get ($propertyInformations->captioni18n) ?></th>
+  <?php } ?>
+   <th class="actions"><?php echo CopixI18N::get ("copix:common.actions.title"); ?></th>
+  </tr>
+  </thead>
+  <tbody>
+<?php foreach ($arUsers as $item=>$user) { ?>
+  <tr {cycle values=',class="alternate"' name="CopixTable"}>
+  <?php foreach ($userProperties as $name=>$propertyInformations) { ?>
+   <td><?php echo htmlentities ($user->$name); ?></td>
+  <?php } ?>
+   <td><a href="<?php echo CopixUrl::get ("users|admin|prepareEdit", array ("login"=>$user->login)); ?>"><img src="<?php echo CopixUrl::get (); ?>img/tools/update.png" alt="<?php echo CopixI18n::get ('copix:common.buttons.update'); ?>" /></a>
+       <a href="<?php echo CopixUrl::get ("users|admin|delete", array ("login"=>$user->login)); ?>"><img src="<?php echo CopixUrl::get (); ?>img/tools/delete.png" alt="<?php echo CopixI18N::get ("copix:common.buttons.delete"); ?>" /></a>
+   </td>
+  </tr>
+<?php } ?>
+  </tbody>
+</table>
+<?php
+   }
+?>
+<br />
+<p>
+<a href="<?php echo CopixUrl::get ('users|admin|create'); ?>"><img src="<?php echo CopixUrl::get (); ?>img/tools/add.png" alt="<?php echo CopixI18N::get('copix:common.buttons.new');?>" /><?php echo CopixI18N::get ('copix:common.buttons.new');?></a>
+</p>

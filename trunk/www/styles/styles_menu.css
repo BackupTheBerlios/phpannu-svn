@@ -1,0 +1,214 @@
+/***** Module Menu *******************/
+#menudef {
+   background:transparent;
+   padding: 0;
+   border: 0;
+   align: right;
+   margin: 0;
+   display:block;
+   text-align:left;
+   height:auto;
+   z-index:999;
+   font-size: 1em;
+   }
+
+#menudef ul {
+   margin-left:100px;
+   margin-top:-18px;
+   padding:0;
+   border:0;
+   display:block;
+   visibility:hidden;
+   width:170px;
+   z-index:999;
+   position:absolute;
+   }
+
+#menudef a {
+   background:transparent;
+   font:bold;
+   font-weight:bold;
+   text-align:left;
+   text-decoration:none;
+   color:#6b3614;
+   padding-bottom:2px;
+   padding-top:2px;
+   display:block;
+   height:auto;
+   margin:0
+   width:170px;
+   }
+
+#menudef a:hover {
+   background-color: #ee7516;
+   }
+
+#menudef ul a {
+   background:transparent;
+   font:normal;
+   margin:0;
+   border-top:0;
+   
+   /*border-right: 1px solid #000000;
+   border-left: 1px solid #000000;*/
+   
+   width:170px;
+   height:auto
+   }
+
+#menudef ul a:hover {
+   font:normal;
+   color:#6b3614;
+   text-align: left;
+
+   width:170px;
+   height:auto;
+   }
+
+#menudef li {
+/*   background-image: url('../img/copix/bg_menu.gif'); */
+/*   background-repeat: no-repeat; */
+
+   padding-right:0;
+   padding-left:15px;
+   padding-bottom:0;
+   padding-top:2px;
+   margin:0;
+   border:0;
+   /*
+   border-bottom: 2px solid #6b3614;*/
+
+   border-bottom: 1px solid #000000;
+   list-style-type:none;
+   width:170px;
+   height: 30px;
+   }
+
+
+#menudef li li ul{
+    margin-left:100px;
+    margin-top:-18px;
+    }
+
+#menudef li ul {
+    border: 1px dashed #cc3133;
+    }
+    
+#menudef li ul li {
+    width:170px;
+    background-color: #ffeecc;
+    background-image: none;
+    padding-left: 0;
+    height: auto;
+    }
+
+#menudef li ul li ul{
+    }
+/***** Fin Module Menu ***************/ 
+/***** Module Menu_2 *****************/
+/*- menudef -----------------*/
+.menudef ul {
+   background:transparent;
+   padding: 0;
+   border: 0;
+   margin: 0;
+   display:block;
+   text-align:left;
+   height:auto;
+   z-index:999;
+   font-size: 1em;
+   }
+.menudef ul ul {
+   margin-left:100px;
+   margin-top:-18px;
+   visibility:hidden;
+   z-index:999;
+   position:absolute;
+   }
+.menudef ul ul ul {
+   margin-left:170px;
+   }
+.menudef li {
+   padding:0;
+   margin:0;
+   border:0;
+   border-bottom: 1px solid #000000;
+   list-style-type:none;
+   }
+
+
+.menudef a {
+   width:170px;
+   background-color: #ffeecc;
+   font-weight:bold;
+   text-align:left;
+   text-decoration:none;
+   color:#6b3614;
+   padding-bottom:2px;
+   padding-top:2px;
+   padding-left:15px;
+   margin:0px;
+   display:block;
+   }
+
+.menudef a:hover {
+   background-color: #ee7516;
+   }
+/*- normalWebSitePlan -----------------*/
+.normalWebSitePlan ul {
+   /*background-color:#ffCA6B;*/
+   list-style-type:none;
+   margin-left:0px;
+   padding-left:0px;
+   }
+.normalWebSitePlan ul li{
+   padding-top:20px;
+   clear:both;
+   text-transform:uppercase;
+   letter-spacing : 0.1em ;
+   }
+.normalWebSitePlan ul li a{
+   border-bottom:solid 2px black;
+   display:block;
+   width:100%;
+   }
+.normalWebSitePlan ul ul {
+   clear:none;
+   width:100%;
+   }
+.normalWebSitePlan ul ul li{
+   background-color:#ffCA6B;
+   padding:0;
+   margin:1px;
+   clear:none;
+   float:left;
+   width:100px;
+   display:block;
+   width:32.9%; /*33% donne 2 colonnes*/
+   text-transform:none;
+   letter-spacing : normal ;
+   }
+.normalWebSitePlan ul ul li a{
+   border:0;
+   }
+.normalWebSitePlan ul ul ul{
+   clear:both;
+   margin:0;
+   padding:0;
+   list-style-type:disc;
+   background-color:#EE790E;
+   }
+.normalWebSitePlan ul ul ul li{
+   /*background-color:#FFC793;*/
+   margin:0;
+   float:none;
+   width:100%;
+   border-bottom:solid 1px black;
+   }
+.normalWebSitePlan ul ul ul li a{
+   width:auto;
+   display:block;
+   margin-left:20px;
+   font-weight:normal;
+   }
+/***** Fin module Menu_2 *************/

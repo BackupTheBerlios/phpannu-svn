@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="sessiontools" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="creator" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+      En periode de développement, permet de détruire ou afficher une session en indiquant un paramètre sessionTools dans
+      l'URL. ?sessionTools=destroy ou ?sessionTools=show
+      </description>
+   </descriptions>
+
+   <infos />
+</plugin>

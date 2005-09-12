@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="copixdb" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="2" minor="0" status="" copixversion="2.2"  date="" />
+   <authors>
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="creator" />
+      <author name="Jouanneau Laurent" email="ljouanneau@aston.fr" website="http://ljouanneau.com" role="contributor" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+      Permet d'activer le support des bases de données dans Copix.
+      Ce plugin sert surtout à stocker les paramètres de connection.
+      </description>
+   </descriptions>
+   <infos />
+</plugin>

@@ -1,0 +1,96 @@
+
+changelog CopixDAO pour Copix 2.1
+
+
+Incompatibilité avec CopixDb 1
+
+- CopixDbConnection::getTableList et CopixDbConnection::getFieldList : deplacé dans une classe spécialisée : CopixDbTools à surcharger dans les drivers
+- CopixDbConnection::formatText() : deprecated, remplacé par quote()
+- CopixDbConnection::doInsert, doUpdate, doDelete, doSelect : ont bougé dans CopixDbWidget
+- CopixDbFactory::getTools : changement de nom -> getConnector
+- config plugin CopixDb : propriété "config" renommé en "profils"
+- CopixDbId n'existe plus (on donne directement le nom du driver maintenant)
+- CopixDbProfil : plus de CopixDbId
+- drivers incompatibles car réorganisés et api légèrement différente (mais trés facile à réadapté).
+- CopixDbResultSet::fetchRow et fetchObject : deprecated
+- L'objet CopixDbWidget a changé de nom : CopixQueryWidget.
+- Le nouveau CopixDbWidget propose un autre fonctionnement.
+
+Améliorations / Fonctionnalités supplémentaires
+
+CopixDbFactory
+---------------
+- modification de _createConnection : plus rapide et automatique
+- les drivers sont maintenant dans un sous repertoire
+- methode getTools : nouveau fonctionnement (l'ancien est dans une nouvelle méthode getConnector)
+   elle renvoi un objet CopixDbTools
+- methode getDbWidget : renvoi un objet CopixDbWidget
+- Une factory dédiée aux scripts non copix a été rajoutée : CopixDbFactorySA (inclure CopixDbStandalone.lib.php)
+
+
+CopixDbConnection
+------------------
+- meilleur gestion des erreurs
+- utilisation du debuggeur de Copix pour afficher les requêtes
+- plus simple à surcharger (s'occupe plus de chose redondantes)
+- nouvelles méthodes :
+   doLimitQuery
+   quote
+   getErrorMessage
+   getErrorCode
+   affectedRows
+   lastId
+   setAutoCommit
+   begin
+   commit
+   rollback
+
+CopxiDbResultSet
+------------------
+
+- fetch en renvoyant des objets par defaut. le renvoi en tableau est deprecated. La philosophie : 100% objet
+- fetchObject devient un alias de fetch.
+- nouvelles méthodes
+   fetchInto. initialise les propriétés de l'objet donné en paramètre avec les valeurs récupérées
+   fetchUsing : idem que fetchInto, mais instancie un objet avant.
+   numrows :  renvoi le nombre de lignes du resultat.
+
+CopixDbTools
+------------
+Nouvelle classe contenant des méthodes outils permettant de manipuler une base de donnée
+et en recuperer des infos techniques (liste de tables, liste des colonnes d'une table etc...)
+
+CopixDbWidget
+-------------
+Nouvelle classe apportant des méthodes facilitant la vie :
+- fetchFirst
+- fetchFirstUsing
+- fetchFirstInto
+- fetchAll
+- fetchAllUsing
+- doInsert, doUpdate, doDelete, doSelect
+- doSelectFetchFirst, doSelectFetchFirstInto, doSelectFetchFirstUsing
+- doSelectFetchAll, doSelectFetchAllUsing
+- experimental : prepareValues : methode preparant une serie de valeurs pour les requetes
+  en se basant sur les propriétes d'un objet et son objet CopixObjectDbProperties associé.
+
+CopixQueryWidget
+----------------
+Contient les methodes de l'ancien CopixDbWidget, mais optimisée.
+
+CopixObjectDbProperties
+-----------------------
+contient des infos sur les champs d'une table et les propriétés d'un objet pour
+faire du mapping relationnel objet.
+
+Drivers
+-------
+- mysql
+- postgresql
+- oracle (api oci8)
+
+TODO :
+-----
+support date
+Renommer CopixObjectDbProperties en CopixDAOProperties
+

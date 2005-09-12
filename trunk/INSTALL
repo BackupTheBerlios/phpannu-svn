@@ -1,0 +1,63 @@
+Installation de copix
+=====================
+
+I. Pour un test
+
+1) décompressez l'archive dans l'arborescence de votre site
+    windows : avec winzip
+    linux : cd /repertoire/site/
+            tar xvzf copix.tar.gz
+
+
+Cela vous crée un repertoire copix
+
+2) mettre les droits en écriture pour tout le monde dans le repertoire copix/temp
+et tous les sous répertoires.
+
+3) dans votre navigateur, tapez l'url :
+http://localhost/copix/www/
+(localhost si votre serveur est local, sinon taper le nom de votre site, ex: monsite.com)
+
+
+
+II. Pour un vrai site
+
+1) décompressez l'archive dans l'arborescence de votre site
+    windows : avec winzip
+    linux : cd /repertoire/site/
+            tar xvzf copix.tar.gz
+
+
+Cela vous crée un repertoire copix
+
+2) mettre les droits en écriture pour tout le monde dans le repertoire copix/temp
+et tout les sous répertoires.
+
+3) configurez le serveur web pour que la racine de votre site soit le repertoire www dans
+copix.
+dans apache : documentRoot= /chemin/copix/www
+
+Si vous ne pouvez pas modifier le serveur web, peut être alors vous ne voulez pas avoir le
+chemin copix/www dans l'url.
+Dans ce cas, mettez tout les fichiers situé dans le repertoire copix à la racine de votre site
+Modifiez le nom de www/ ou alors mettez tout les fichiers de www à la racine de votre site.
+Vous devriez alors obtenir ceci :
+
+racine/project/
+racine/temp/
+racine/utils/
+racine/img/
+racine/js/
+racine/styles/
+racine/index.php
+
+Modifiez alors les chemins indiqués dans index.php.
+
+
+3) dans votre navigateur, tapez l'url :
+http://monsite.com/
+(localhost si votre serveur est local)
+
+
+Pour plus d'information, voyez http://copix.aston.fr/documentation/
+

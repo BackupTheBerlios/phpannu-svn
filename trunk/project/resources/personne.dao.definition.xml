@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<daodefinition version="1">
+ <datasource>
+   <tables>
+      <table name="personne" tablename="personne" primary="yes" />
+   </tables>
+   <connection name="annuaire" />
+ </datasource>
+
+ <properties>
+  <property name="id" fieldName="id"
+        caption="Identifiant"
+        type="autoincrement"
+        pk="true"
+        required="yes"
+        table="personne"
+         />
+  <property name="nom" fieldName="nom"
+        caption="Nom"
+        type="string"
+        required="yes"
+        table="personne"
+         />
+  <property name="prenom" fieldName="prenom"
+        caption="Pr�nom"
+        type="string"
+        required="no"
+        table="personne"
+         />
+  <property name="date_naiss" fieldName="date_naiss"
+        caption="Date de naissance"
+        type="date"
+        required="no"
+        table="personne"
+         />
+ </properties>
+</daodefinition>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<project xmlns="http://copix.org/ns/project/1.0" copixversion="2.2">
+   <!--
+   <general>
+      <name>my project</name>
+      <date></date>
+      <version major="" minor="" status="unstable" />
+      <descriptions>
+         <description lang="fr">
+            C'est un projet Copix
+         </description>
+      </descriptions>
+      <copyright>copyright myCompany 2004 </copyright>
+      <site>http://mycompany.com</site>
+      <authors>
+         <author name="" email="" website="" role="creator" />
+         <author name="" email="" website="" role="contributor" />
+      </authors>
+   </general>
+   -->
+   <parameters>
+      <parameter name="homePage"  captioni18n="parameter.homePage"  default="index.php?module=auth" />
+      <parameter name="titlePage" captioni18n="parameter.titlePage" default="Copix Framework" />
+      <parameter name="titleBar"  captioni18n="parameter.titleBar"  default="[Copix] {$TITLE_PAGE}"  />
+      <parameter name="mailEnabled"  captioni18n="parameter.mailEnabled"  default="0"  />
+      <parameter name="mailFrom"  captioni18n="parameter.mailFrom"  default="webmaster"  />
+      <parameter name="mailFromName"  captioni18n="parameter.mailFromName"  default="webmaster"  />
+      <parameter name="mailSaveToDisk"  captioni18n="parameter.mailSaveToDisk"  default="0"  />
+      <parameter name="mailSmtpHost"  captioni18n="parameter.mailSmtpHost"  default="localhost"  />
+      <parameter name="mailMethod"  captioni18n="parameter.mailMethod"  default="smtp"  />
+   </parameters>
+</project>

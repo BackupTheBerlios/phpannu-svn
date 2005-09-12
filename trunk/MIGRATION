@@ -1,0 +1,9 @@
+Migration
+==========
+
+Ceci indique les changements à éffectuer sur votre application, quand vous passez d'une version de copix à une autre.
+
+
+de Copix 2.2.1 à Copix 2.2.2
+----------------------------
+Si vous utilisez COPIX_AR_ERROR, vos templates error.tpl devront utiliser la variable "MAIN" et non plus "message". De plus, seul le template project/template/error.tpl sera utilisé.

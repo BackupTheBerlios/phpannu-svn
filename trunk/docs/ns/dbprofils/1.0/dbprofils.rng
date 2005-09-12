@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://copix.org/ns/dbprofils/1.0">
+
+   <start>
+      <element name="dbprofils">
+         <element name="general">
+            <element name="defaultprofil">
+               <attribute name="name" />
+               <empty/>
+            </element>
+         </element>
+         <element name="profils">
+            <oneOrMore>
+               <ref name="profil" />
+            </oneOrMore>
+         </element>
+      </element>
+   </start>
+
+   <define name="profil">
+      <element name="profil">
+         <attribute name="name" />
+         <attribute name="driver">
+         <choice>
+            <value type="string">mysql</value>
+            <value type="string">oci8</value>
+            <value type="string">odbcsqlserver</value>
+            <value type="string">postgresql</value>
+            <value type="string">sqlserver</value>
+         </choice>
+         </attribute>
+         <attribute name="dataBase" />
+         <attribute name="host" />
+         <attribute name="user" />
+         <attribute name="password" />
+         <attribute name="persistance">
+            <data type="boolean" />
+         </attribute>
+         <attribute name="shared">
+            <data type="boolean" />
+         </attribute>
+
+         <optional>
+            <attribute name="schema" />
+         </optional>
+         <empty/>
+      </element>
+   </define>
+
+
+</grammar>

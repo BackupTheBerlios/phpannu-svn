@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="stat" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Gildas Givaja" email="giviz@pyronux.net" website="" role="creator" />
+      <author name="Laurent Jouanneau" email="jouanneau@netcourrier.com" website="" role="contributor" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+         décodage automatique des requetes XML-RPC
+      </description>
+   </descriptions>
+   <infos />
+</plugin>

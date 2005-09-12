@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+@package	copix
+@subpackage profile
+@version	$Id: copixuser.dao.definition.xml,v 1.7 2005/02/17 09:48:24 gcroes Exp $
+@author	Croes Gérald , Jouanneau Laurent
+@copyright 2001-2004 Aston S.A.
+@link		http://copix.aston.fr
+@licence  http://www.gnu.org/licenses/gpl.html GNU General Public Licence, see LICENCE file
+-->
+<daodefinition version="1.0">
+ <datasource>
+   <tables>
+      <table name="copixuser" primary="yes" />
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="login_cusr"
+         captioni18n="copix:profile.dao.CopixUser.login_cusr"
+         pk="true"
+         required="yes"
+         type="varchar"
+         maxlength="50"
+         />
+
+  <property name="name_cusr"
+         captioni18n="copix:profile.dao.CopixUser.name_cusr"
+         type="varchar"
+         maxlength="70"
+         required="yes"
+         />
+
+  <property name="firstname_cusr"
+         captioni18n="copix:profile.dao.CopixUser.firstname_cusr"
+         type="varchar"
+         required="yes"
+         maxlength="70"
+         />
+
+  <property name="email_cusr"
+         captioni18n="copix:profile.dao.CopixUser.email_cusr"
+         type="varchar"
+         required="yes"
+         maxlength="255"
+         />
+ </properties>
+</daodefinition>

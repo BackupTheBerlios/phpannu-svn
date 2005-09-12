@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="stat" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="creator" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+         se charge de stocker les statistiques de connection de chaque page copix.
+      </description>
+   </descriptions>
+   <infos />
+</plugin>

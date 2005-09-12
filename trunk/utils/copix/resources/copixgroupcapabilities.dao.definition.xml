@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+@package	copix
+@subpackage profile
+@version	$Id: copixgroupcapabilities.dao.definition.xml,v 1.7 2004/10/07 10:13:11 gcroes Exp $
+@author	Croes Gérald , Jouanneau Laurent
+@copyright 2001-2004 Aston S.A.
+@link		http://copix.aston.fr
+@licence  http://www.gnu.org/licenses/gpl.html GNU General Public Licence, see LICENCE file
+-->
+<daodefinition version="1.0">
+
+ <datasource>
+   <tables>
+      <table name="grpcap" tablename="copixgroupcapabilities" primary="yes" />
+      <table name="cap" tablename="copixcapability" />
+      <table name="path" tablename="copixcapabilitypath" />
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="id_cgrp"
+         captioni18n="copix:profile.dao.CopixGroupCapabilities.id_cgrp"
+         pk="true"
+         required="yes"
+         type="numeric"
+         />
+
+  <property name="name_ccpb"
+         captioni18n="copix:profile.dao.CopixGroupCapabilities.name_ccpb"
+         type="varchar"
+         maxlength="50"
+         required="yes"
+         fkTable="cap"
+         fkfieldname="name_ccpb"
+         />
+
+  <property name="name_ccpt"
+         captioni18n="copix:profile.dao.CopixCapabilityPath.name_ccpt"
+         type="varchar"
+         maxlength="255"
+         required="yes"
+         fkTable="path"
+         fkFieldName="name_ccpt"
+         />
+
+  <property name="value_cgcp"
+         captioni18n="copix:profile.dao.CopixGroupCapabilities.value_cgcp"
+         type="int"
+         required="yes"
+         />
+
+   <property name="description_ccpb"
+      table="cap"
+      type="varchar"
+   />
+
+  <property name="description_ccpt"
+         type="varchar"
+         table="path"
+         />
+
+ </properties>
+</daodefinition>

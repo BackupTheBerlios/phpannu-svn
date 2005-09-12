@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<moduledefinition>
+    <general>
+        <default name="parameters" descriptioni18n="params.moduleDescription"/>
+        <package name="copix" version="2.2" />
+    </general>
+</moduledefinition>

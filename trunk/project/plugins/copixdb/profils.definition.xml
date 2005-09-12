@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+   <dbdefinition>
+       <general>
+           <defaultprofil name="Select" />
+       </general>
+       <profils>
+       <profil name="Select"
+           driver="mysql"
+           dataBase="copix"
+           host="localhost"
+           user="root"
+           password="s1t8a1n2"
+           persistance="true"
+           shared="true"
+           schema=""
+       />
+       <profil name="annuaire"
+           driver="mysql"
+           dataBase="annuaire"
+           host="localhost"
+           user="root"
+           password="s1t8a1n2"
+           persistance="true"
+           shared="true"
+           schema=""
+       />
+       </profils>
+   </dbdefinition>

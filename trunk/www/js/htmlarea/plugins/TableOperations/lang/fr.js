@@ -1,0 +1,90 @@
+// I18N constants
+
+// LANG: "fr", ENCODING: UTF-8 | ISO-8859-1
+// Author: Ivan Havlicek <ivan@modulix.org>
+
+// FOR TRANSLATORS:
+//
+//   1. PLEASE PUT YOUR CONTACT INFO IN THE ABOVE LINE
+//      (at least a valid email address)
+//
+//   2. PLEASE TRY TO USE UTF-8 FOR ENCODING;
+//      (if this is not possible, please include a comment
+//       that states what encoding is necessary.)
+
+TableOperations.I18N = {
+	"Align":					  "Aligne",
+	"All four sides":				  "Les quatre côtés",
+	"Background":					  "Arrière plan",
+	"Baseline":                                       "Baseline",
+	"Border":					  "Bordure",
+	"Borders":					  "Bordures",
+	"Bottom":                                         "Bas",
+	"CSS Style":					  "Style [CSS]",
+	"Caption":					  "Libellé",
+	"Cell Properties":                                "Propriétés de la cellule",
+	"Center":					  "Centré",
+	"Char":                                           "Caractère",
+	"Collapsed borders":                              "Bords en creux",
+	"Color":					  "Couleur",
+	"Description":					  "Description",
+	"FG Color":					  "Couleur premier plan",
+	"Float":                                          "Flottant",
+	"Frames":					  "Frames",
+	"Height":                                         "Hauteur",
+	"How many columns would you like to merge?":      "Combien de colonnes voulez vous fusionner ?",
+	"How many rows would you like to merge?":         "Combien de lignes voulez vous fusionner ?",
+	"Image URL":					  "URL de l'image",
+	"Justify":                                        "Justifié",
+	"Layout":					  "Cadrage",
+	"Left":						  "Gauche",
+	"Margin":                                         "Marge",
+	"Middle":                                         "Milieu",
+	"No rules":					  "Sans règles",
+	"No sides":					  "Sans cotés",
+	"None":                                           "Aucun",
+	"Padding":					  "Remplissage",
+	"Please click into some cell":                    "Positionnez-vous dans une cellule",
+	"Right":					  "Droite",
+	"Row Properties":                                 "Propiétés de la ligne",
+	"Rules will appear between all rows and columns": "Les règles vont apparaître entre les lignes et les colonnes",
+	"Rules will appear between columns only":	  "Les règles vont apparaître entre les colonnes uniquement",
+	"Rules will appear between rows only":		  "Les règles vont apparaître entre les lignes uniquement",
+	"Rules":					  "Règles",
+	"Spacing and padding":                            "Espacement et remplissage",
+	"Spacing":					  "Espacement",
+	"Summary":					  "Résumé",
+	"TO-cell-delete":				  "Supprimer cellule",
+	"TO-cell-insert-after":				  "Insérer cellule après",
+	"TO-cell-insert-before":			  "Insérer cellule avant",
+	"TO-cell-merge":				  "Fusionner cellules",
+	"TO-cell-prop":					  "Propriétés Cellule",
+	"TO-cell-split":				  "Scinder cellule",
+	"TO-col-delete":				  "Supprimer colonne",
+	"TO-col-insert-after":				  "Insérer colonne après",
+	"TO-col-insert-before":				  "Insérer colonne avant",
+	"TO-col-split":					  "Scinder colonne",
+	"TO-row-delete":				  "Supprimer ligne",
+	"TO-row-insert-above":				  "Insérer ligne avant",
+	"TO-row-insert-under":				  "Insérer ligne après",
+	"TO-row-prop":					  "Propriétés ligne",
+	"TO-row-split":					  "Scinder ligne",
+	"TO-table-prop":				  "Propriété table",
+	"Table Properties":				  "Propriétés de la table",
+	"Text align":                                     "Alignement texte",
+	"The bottom side only":				  "La coté bas uniquement",
+	"The left-hand side only":			  "Le coté droit uniquement",
+	"The right and left sides only":		  "Les cotés droits et gauche",
+	"The right-hand side only":			  "Le coté droit uniquement",
+	"The top and bottom sides only":		  "Les cotés haut et bas",
+	"The top side only":				  "Le haut uniquement",
+	"Top":                                            "Haut",	
+	"Unset color":                                    "Enlever la couleur",
+	"Vertical align":                                 "Alignement vertical",
+	"Width":					  "Largeur",
+	"not-del-last-cell":				  "HTMLArea refuse de supprimer la dernière cellule de la ligne.",
+	"not-del-last-col":				  "HTMLArea refuse de supprimer la dernière column de la table.",
+	"not-del-last-row":				  "HTMLArea refuse de supprimer la dernière ligne de la table.",
+	"percent":					  "pourcent",
+	"pixels":					  "pixels"
+};

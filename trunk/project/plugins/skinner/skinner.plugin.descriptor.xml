@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="skinner" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+      permet d'indiquer le theme, le template principal par défaut via un parametre de configuration.
+      </description>
+   </descriptions>
+
+   <infos />
+</plugin>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="peardb" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="deprecated" copixversion=""  date="" />
+   <authors>
+      <author name="Jouanneau Laurent" email="ljouanneau@aston.fr" website="http://ljouanneau.com" role="creator" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+      Permet d'utiliser la bibliotheque peardb au lieu de CopixDb.
+      CopixDb étant suffisement mature depuis la version 2.1, il est recommandé
+      d'utiliser CopixDb au lieu de pearDb
+      </description>
+   </descriptions>
+   <infos />
+</plugin>

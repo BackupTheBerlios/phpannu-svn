@@ -1,0 +1,44 @@
+<?xml version="1.0" ?>
+<daodefinition version="1">
+ <datasource>
+   <tables>
+      <table name="adresse" tablename="adresse" primary="yes" />
+   </tables>
+   <connection name="annuaire" />
+ </datasource>
+
+ <properties>
+ 
+  <property name="id" fieldName="id"
+        caption="Identifiant"
+        type="autoincrement"
+        pk="true"
+        required="yes"
+        table="adresse"
+         />
+  <property name="id_pers" fieldName="id_pers"
+        caption="id de la personne"
+        type="int"
+        required="yes"
+        table="adresse"
+         />
+  <property name="cp" fieldName="cp"
+        caption="Code postale"
+        type="int"
+        required="no"
+        table="adresse"
+         />
+  <property name="ville" fieldName="ville"
+        caption="Ville"
+        type="string"
+        required="no"
+        table="adresse"
+         />
+  <property name="pays" fieldName="pays"
+        caption="Pays"
+        type="string"
+        required="no"
+        table="adresse"
+         />
+ </properties>
+</daodefinition>

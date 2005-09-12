@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+@package	copix
+@subpackage profile
+@version	$Id: copixgroup.dao.definition.xml,v 1.8 2005/01/04 10:07:58 gcroes Exp $
+@author	Croes Gérald , Jouanneau Laurent
+@copyright 2001-2004 Aston S.A.
+@link		http://copix.aston.fr
+@licence  http://www.gnu.org/licenses/gpl.html GNU General Public Licence, see LICENCE file
+-->
+<daodefinition version="1.0">
+
+ <datasource>
+   <tables>
+      <table name="copixgroup" primary="yes" />
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="id_cgrp"
+         captioni18n="copix:profile.dao.CopixGroup.fields.id_cgrp"
+         pk="true"
+         required="yes"
+         type="numeric"
+         />
+
+  <property name="name_cgrp"
+         captioni18n="copix:profile.dao.CopixGroup.fields.name_cgrp"
+         type="string"
+         maxlength="50"
+         required="yes"
+         />
+
+  <property name="description_cgrp"
+         captioni18n="copix:profile.dao.CopixGroup.fields.description_cgrp"
+         type="string"
+         maxlength="255"
+         required="yes"
+         />
+
+  <property name="all_cgrp"
+         captioni18n="copix:profile.dao.CopixGroup.fields.all_cgrp"
+         type="int"
+         maxlength="1"
+         required="no"
+         />
+         
+  <property name="known_cgrp"
+         captioni18n="copix:profile.dao.CopixGroup.fields.known_cgrp"
+         type="int"
+         maxlength="1"
+         required="no"
+         />
+
+  <property name="isadmin_cgrp"
+         captioni18n="copix:profile.dao.CopixGroup.fields.isadmin_cgrp"
+         type="int"
+         maxlength="1"
+         required="no"
+         />
+ </properties>
+</daodefinition>

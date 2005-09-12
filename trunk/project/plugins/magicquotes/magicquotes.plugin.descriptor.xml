@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="magicquotes" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Jouanneau Laurent" email="ljouanneau@aston.fr" website="http://ljouanneau.com" role="creator" />
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="contributor" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+       Plugin à utiliser si les magicquotes sont activées sur
+   le serveur et qu'on ne peut pas les désactivés. Les modules et autres
+   composants de copix ont été développé pour fonctionner sans magicquotes
+   et il est recommandé de les désactiver pour plus de facilité de maintenance
+   et de performance (sans oublier de faire le necessaire dans les requêtes :
+   intval, doubleval, et CopixDbConnection::quote sur les valeurs à inserer
+   dans les requètes).
+      </description>
+   </descriptions>
+
+   <infos />
+</plugin>

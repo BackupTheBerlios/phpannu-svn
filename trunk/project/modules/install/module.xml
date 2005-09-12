@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<moduledefinition>
+    <general>
+        <default name="install"
+            longdescriptioni18n="install.longdescription"
+            descriptioni18n="install.description"
+            captioni18n="install.caption" />
+            <package name="copix" version="2.2" />
+    </general>
+    <dependencies>
+    <dependency name="auth" kind="module"/>
+    <dependency name="profile" kind="module"/>
+    </dependencies>
+</moduledefinition>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://copix.org/ns/project/1.0">
+ <start>
+   <element name="project">
+      <attribute name="copixversion" />
+      <element name="general">
+         <element name="name"> <text/> </element>
+         <element name="date"> <text/> </element>
+         <element name="version">
+            <attribute name="major" />
+            <attribute name="minor" />
+            <attribute name="status">
+               <choice>
+                  <value>stable</value>
+                  <value>unstable</value>
+               </choice>
+            </attribute>
+            <empty/>
+          </element>
+         <element name="copyright"> <text/> </element>
+         <element name="site"> <text/> </element>
+
+         <optional>
+            <ref name="authors" />
+         </optional>
+         <optional>
+            <ref name="descriptions" />
+         </optional>
+
+      </element>
+
+      <optional>
+         <ref name="parameters" />
+      </optional>
+   </element>
+ </start>
+
+   <define name="parameters">
+      <element name="parameters">
+         <oneOrMore>
+            <element name="parameter">
+               <attribute name="name" />
+               <attribute name="default" />
+               <choice>
+                  <attribute name="caption" />
+                  <attribute name="captioni18n" />
+               </choice>
+               <empty />
+            </element>
+         </oneOrMore>
+      </element>
+   </define>
+
+
+   <define name="descriptions">
+      <element name="descriptions">
+         <oneOrMore>
+            <element name="description">
+               <attribute name="lang" />
+               <text />
+            </element>
+         </oneOrMore>
+      </element>
+   </define>
+
+
+   <define name="authors">
+      <element name="authors">
+         <oneOrMore>
+            <element name="author">
+               <attribute name="name" />
+               <attribute name="email" />
+               <attribute name="website" />
+               <attribute name="role">
+                  <choice>
+                     <value>creator</value>
+                     <value>contributor</value>
+                  </choice>
+               </attribute>
+               <empty />
+            </element>
+         </oneOrMore>
+      </element>
+
+   </define>
+
+</grammar>
+

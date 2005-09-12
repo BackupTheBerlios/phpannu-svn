@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="debug" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="stable" copixversion=""  date="" />
+   <authors>
+      <author name="Jouanneau Laurent" email="ljouanneau@aston.fr" website="http://ljouanneau.com" role="creator" />
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="creator" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+      Quand ce plugin est activé, le mode debuggage de copix
+   est activé. Par défaut, un fichier temp/log/debug*.log est crée
+   et contient toutes les traces que vous aurez inseré dans votre
+   code à l'aide de la fonction debug(). Pour les serveurs
+   Linux/Unix, vous pouvez faire un tail -f nom_du_fichier_debug pour voir
+   en temps réèl les traces.
+
+   Ce plugin permet aussi de surcharger des options de conf de copix.conf.php
+      </description>
+   </descriptions>
+   <infos />
+</plugin>

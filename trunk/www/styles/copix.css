@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #9db7c4;
+    color: #000;
+    padding: 0px;
+    margin:0;
+    font-size: 0.7em;
+}
+
+a:hover {
+color:#FFFFFF;
+background: #000066;
+}
+
+h1 {
+    font-size: 1.3em;
+    color: #18207b;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    text-align: right;
+    border-bottom: 2px dotted #18207b ;
+}
+h1:first-letter { font-size: 1.3em; }
+
+h2 {
+    font-size: 1.1em;
+    color: #18207b;
+    padding-left: 0px;
+    padding-bottom: 0px;
+    text-align: left;
+    border-bottom: 1px dotted #18207b ;
+}
+
+h2:first-letter { font-size: 1.3em; }
+
+
+table { border: 1px solid #CCC; }
+
+th {
+    color: #18207b;
+    text-align: left;
+}
+
+td { border-bottom: 1px dotted #CCC;
+border-right: 1px dotted #CCC;
+}
+
+img { border: 0px none; }
+
+.connectButton {
+   border: 1px #000 solid;
+   background-color: #9db7c4;
+}
+
+.Editeur {
+    /* Zone de texte wysiwyg */
+    border-left: 1px solid ButtonShadow;
+    border-right: buttonshadow 2px solid;
+    border-bottom: buttonshadow 2px solid;
+    border-top: 1px solid ButtonShadow;
+    overflow-y: auto;
+    overflow-x: hidden;
+    width:100%;
+    height:100%;
+    padding : 0px 5px 3px 5px;
+}
+.Editeur p {
+    /* Paragraphes dans la zone wysiwyg */
+    margin: 10px 0px 10px 0px;
+}
+
+
+
+#all_site {
+    margin: 20px;
+    border: 1px solid #000;
+    min-width: 500px;
+    background-color: #FFF;
+}
+
+
+#logo img {
+   float: left;
+   
+}
+
+#content {
+    background-color: #ffffff;
+    padding: 5px;
+    margin: 10px;
+    width: auto;
+    clear:left;
+}
+
+#banner {
+    padding: 2px;
+}
+
+

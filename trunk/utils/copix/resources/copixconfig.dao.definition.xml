@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+@package	copix
+@subpackage core
+@version	$Id: copixconfig.dao.definition.xml,v 1.4 2005/02/17 09:48:24 gcroes Exp $
+@author Bertrand yan
+@copyright 2001-2004 Aston S.A.
+@link		http://copix.aston.fr
+@licence  http://www.gnu.org/licenses/gpl.html GNU General Public Licence, see LICENCE file
+-->
+<daodefinition version="1.0">
+ <datasource>
+   <tables>
+      <table name="copixconfig" primary="yes" />
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="group_ccfg"
+         captioni18n="copix:config.dao.group_ccfg"
+         required="yes"
+         type="varchar"
+         maxlength="255"
+         />
+  <property name="id_ccfg"
+         captioni18n="copix:config.dao.id_ccfg"
+         pk="true"
+         required="yes"
+         type="varchar"
+         maxlength="255"
+         />
+  <property name="value_ccfg"
+         captioni18n="copix:config.dao.value_ccfg"
+         type="varchar"
+         maxlength="255"
+         />
+ </properties>
+</daodefinition>

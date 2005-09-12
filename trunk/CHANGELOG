@@ -1,0 +1,218 @@
+CHANGELOG
+
+version 2.2.2
+=============
+ 
+*** core
+ - CopixZone::getParam ($name, $defaultValue='') récupère le paramètre $this->param[$name] et lui donne la valeur default value si elle n'est pas trouvé
+ - CopixActionGroup::getRequest ($name, $defaultValue=null, $defaultIfEmpty) récupère $this->vars[$name] et lui donne la valeur default si elle n'est pas trouvée ou vide (si $defaultIfEmpty)
+ - FIX #752 : erreur de positionnement des flushs qui empêchent IE de correctement interpréter les demandes de téléchargement.
+ - FIX #753 : flush prématuré dans le ErrorHandler, provoquant une erreur supplémentaire (plus possible pour le coordinateur de spécifier le type de document)
+ - FIX #736 : Atomicité sur les écritures de fichiers
+ - FIX #615 : Ajout d'un CopixContext::push avant affichage, et d'un CopixContext::pop après affichage.
+ - FIX #725 : compatibilité PHP 4.4 : problème de retour de constantes dans des méthodes déclarant retourner une référence
+
+*** DAO et db
+ - FIX : dans CopixDAO le mot clé AS n'était pas utilisé dans les alias de tables ce qui provoquait des erreurs. La correction tient compte de la specificité oracle..
+ - FIX #651 : doublon des noms des champs lors du passage d'un tableau à addCondition. $sp->addCondition ('champ', '=', array (1, 2));
+ 
+*** CopixConfig
+ - Ajout de CopixConfig::getOsName () qui retourne le nom du système d'exploitation
+ - Ajout de CopixConfig::osIsWindows () qui indique si le système d'exploitation est de type windows ou non
+ - FIX #694 : Test de COPIX_INSTALL dans CopixConfig, pour ne pas utiliser la base de données inutilement.
+
+*** Module users, auth et profile
+ - FIX #709 supression des fichiers en trop (templates *.tpl)
+ - FIX #679 supression des fichiers en trop (resources/users.dao.definition.xml, dao_fr et dao_en.properties)
+ - FIX #742 les caractères HTML sont maintenant traités lors de l'affichage en liste des logins
+ - FIX #754 : module auth : Notice error dans LoginZone
+ - FIX #751 (#658) - plugin profile : Mauvais paramètre de redirection lorsque l'utilisteur n'avait pas les droits sur une action
+
+*** CopixI18N
+ - Ajout de la clef copix:common.buttons.selected
+
+*** divers
+ - FIX #745 : Ajouté un error.tpl. Les templates d'erreurs n'utilisent plus message mais "MAIN" comme variable pour afficher le message.
+             Elle appèle également processStandard et CopixHTMLHeader (au même titre que AR_DISPLAY).
+ - suppression de CopixNamingConvention.class.php, obsoléte depuis 2.1
+ - FIX #782 : Erreur de typo dans significanturl.plugin.conf.php
+ - Le plugin significanturl est désormais marqué OBSOLETE en plus de EXPERIMENTAL.
+ - FIX #781 : Variable par forcement définie dans CopixUrl (génère une notice dans certain cas)
+ 
+ 
+Version 2.2.1
+=============
+
+ - quelques modifications et corrections mineures dans le core
+ - suppression d'un "echo" dans CopixDate.lib.php
+ - mise à jour des schemas relaxng dans docs/ns
+ - project/modules/install/zones/admin.zone.php : correction d'une erreur de syntaxe
+ - project/modules/auth/templates/login.form.tpl: correction d'une fermeture de balise
+ - project/modules/auth/actiongroup/login.actiongroup.php: correction du bug 617 : notice sur un parametre
+ - modifications dans le script d'installation et le module install pour éviter le renommage de install.php
+ - transfert de install.php dans utils/copix/
+
+Version 2.2
+===========
+
+*** CopixDAO
+ - Support de Oracle (Blob et Sequences), et de postgres (sequences)
+ - ajout du support des methodes de type update dans les fichiers xml DAO
+
+*** CopixDB
+ - Support de SQLServer
+ - Support de SQLServer via ODBC
+ - les profils de connection sont dans un fichier xml dans le repertoire du plugin
+
+*** Core
+ - Gestion d'événements
+ - Il est maintenant nécessaire d'avoir un fichier nommé module.xml pour que le module soit exécuté
+ - Ajout de la méthode beforeDisplay dans les plugins.
+ - Optimisations diverses (temp d'exécution grandement amélioré)
+ - gestionnaire d'erreur : fichier de conf séparé, possiblité de le désactiver. Renommage des options de conf.
+ - nouveaux types retour : COPIX_AR_DOWNLOAD_CONTENT, COPIX_AR_BINARY_CONTENT
+
+*** CopixConfig
+ - registerPlugin : ajout d'un argument facultatif pour pouvoir indiquer un fichier de conf alternatif pour le plugin
+ - Les données sont maintenant sauvegardées en base de données, cela permet de vider le cache sans perdre les paramètres.
+ - Possibilité d'ajouter des paramètres projets
+ - Les paramètres sont maintenant déclarés dans les fichiers module.xml et project.xml
+ - Utilisation de I18N pour les libellés des paramètres de configuration.
+
+*** I18N
+ - Prise en charge des particularités de la date
+ - le plugin I18N modifie maintenant directement default_language et default_country de copix.conf.php. cela permet à
+  CopixI18N d'être plus performant
+
+*** Smarty
+ - Mise à jour en version 2.6.9
+ - Ajout du modificateur datei18n
+ - Ajout du block CopixHTMLHeader
+ - Modification du plugin calendar pour qu'il soit i18n
+ - Modification du plugin htmlarea (suppression de certaines fonctionnalités perturbantes, il utilise maintenant la langue courante par défaut et non plus le français.)
+
+*** LDAP
+ - Briques de connexion à un annuaire LDAP (reprends l'interface globale de CopixDB)
+
+*** Divers
+ - Méthodes de manipulation de plugin / de modules. (récupération de liste)
+ - Module permettant l'installation / la désinstallation de modules
+ - des schemas relaxNG sont disponibles dans docs/ns/ pour pouvoir valider/editer correctement les fichiers XML de copix
+ - le plugin debug permet de surcharger la conf de copix
+ - [FIX] CopixFileLocker::write renvoyait toujours false. Renvoi vrai maintenant si ecriture ok
+ - [EXPERIMENTAL] Ajout du support de XMLRPC : classe CopixXmlRpc, plugin xmlrpc, code retour d'action COPIX_AR_XMLRPC, COPIX_AR_XMLPRC_FAULT
+ - nouvelle classe CopixDateTime dans CopixDate.lib.php
+
+Version 2.1
+===========
+
+*** auth
+   ajout des resources et correction du template
+   internationnalisation
+   utilisation de copixurl
+   Ajout d'un script SQL d'installation pour la configuration par défaut.
+   Correction de ProjectUser, passage de l'extention des champs à CUSR plutot que USER.
+
+*** genericTools
+   ajout du module genericTools qui contiendra par la suite des éléments génériques
+   ajout de l'action erreur, correction de la variable de session CONTENT_MODULE_ERROR
+      par MODULE_GENERICTOOLS_ERROR. Correction de l'action erreur par l'appel à genericTools.
+   ajout de la zone ConfirmDialog
+
+***CopixDAO
+   - DAO automatiquement compilées pour accélerer les développements standards.
+   - définition des DAO dans des fichiers xml, permettant de faire du mapping relationnel objet 'basique'
+
+*** Support de l'internationnalisation.
+   - fichiers de ressources de chaines de traduction pour copix, les modules etc... (repertoire resources dans les modules/copix)
+   - Objet pour obtenir les traductions : CopixI18N::get('id de la chaine');
+   - plugin I18N, pour la detection auto de la langue.
+   - Ajout des tags smarty messagei18n, resourcei18n, imagei18n
+
+*** Refonte de CopixDb
+   - compatible avec la version précedente
+   - réorganisation interne
+   - ajout de nombreuses méthodes et fonctionnalités (voir fichier CHANGELOG dans utils/copix/db/)
+   - Nouvelle syntaxe base de données : CopixDBFactory, CopixDBConnection au lieu des CopixDbFactory et CopixDbConnection.
+
+*** Noyau
+   - Elements de configuration par défaut mis en commentaire dans copix.conf.php
+   - Possibilité d'activer / désactiver des modules
+   - Messages d'erreurs plus explicites et multi-langue
+   - Ajout de CopixHTMLHeader pour manipuler la partie Head du fichier HTML.
+   - deux nouvelles manières d'appeler les zones (au lieu de $GLOBALS['COPIX']['COORD']->processZone('IdZone',parametres):
+      - CopixZone::process ('IdZone',parametres);
+      - ou dans les actionsgroup : $this->processZone('IdZone',parametres);
+   - nouvelle méthode pour effacer une zone et son équivalent 'raccourci'
+         $GLOBALS['COPIX']['COORD']->clearZone('IdZone',parametres);
+      ou  CopixZone::clear ('IdZone',parametres);
+   - CopixActionRedirect () pour faire une redirection directement dans
+       le fichier de description.
+   - CopixActionStatic () pour les afficher directement des pages statiques
+     depuis le fichier de description
+   - COPIX_AR_DOWNLOAD, COPIX_AR_BINARY comme types de retours.
+   - Modification de la classe CopixConfig
+        Ajout des méthodes get et set pour les paramètres dynamiques (bcp plus pratique que l'ancien système ou il fallait sans cesse rechercher et synchroniser les paramètres)
+   - CopixZone: attribut supplémentaire _useCache, pour activer ou non le cache de la zone
+   - mise en conformité au XHTML (template processus standards, exemple, génération de code etc..)
+   - Ajout d'un message d'erreur si oublie de mettre un CopixActionReturn dans la
+     méthode de l'actiongroup
+   - Ajout d'une méthode CopixActionGroup::process ('module|ag|methode', array (params));
+      permet d'appeler des AG dans d'autres modules.
+   - CopixNamingConvention obsolète (remplacé par CopixFileSelector)
+
+*** Plugins : Organisation modifiées
+   - Changement de l'emplacement des plugins. Maintenant, l'organisation est plugins/nomplugin/classes+ressources+configs
+      > ce système les rends plus transportable.
+   - Possibilité d'enregistrer auprés de l'objet de la configuration, des plugins qui sont dans des modules
+    $config->registerPlugin('monmodule|monplugin');
+   - fichier de description des plugins, en xml, réservé pour une utilisation ulterieure
+   - le plugin auth sera dorénavant livré avec le module auth.
+   - ajout paramètre sur les méthodes afterProcess des plugins : objet CopixActionReturn de l'action executée
+
+*** Modification dans les Plugins
+  - Auth : déplacement de la méthode checkAllNeededRights du plugin auth vers CopixUser, pour pouvoir
+   implementer facilement son propre système de droit, en surchargeant CopixUser.
+  - debug : ajout d'un parametre niveau de debugage à la fonction debug
+  - speedview : refonte, nouveau paramètre de configuration, beaucoup plus souple et evite de provoquer une grande partie des erreurs (genre tenter d'afficher le compteur alors qu'il s'agit d'une redirection)
+
+
+*** modification Smarty
+   - Passage en Smarty 2.6.1 (essentiellement version d'optimisation)
+   - Les plugins smarty propres à copix sont maintenant dans le répertoire
+      utils/copix/smarty_plugins/
+   - Ajout de plugins smarty : contenttype, wiki, linkBar, tooltip...
+
+*** Modifications sur CopixTpl
+   - Pour CopixTpl, possibilité d'indiquer des sous-répertoires dynamiquement, au
+     répertoire templates. il suffit d'indiquer ces noms dans le tableau
+     $GLOBALS['COPIX']['CONFIG']->tpl_sub_dirs. La manipulation de cette variable devrait
+     être réservé au plugin. (utile par ex pour le support multi-langue)
+   - Suppression méthode obsolète _getTemplatePath de CopixTpl
+
+*** Un système de paramétrage en xml
+   - chaque module peut avoir un fichier de configuration XML
+   - on accède à ces paramètres de configuration par CopixConfig::set/get
+   - paramètres mis en cache sous forme PHP
+
+*** Nouvelles classes utilitaires
+   - CopixWikiRenderer (issue de la classe WikiRenderer http://ljouanneau.com/softs/wikirender/)
+      permettant de transformer un texte wiki en xhtml valide.
+   - CopixSimpleXml : analyseur de contenu XML, permettant de naviguer ensuite d'y naviguer par le biais d'objet, comme dans SimpleXml de PHP5
+   - CopixCsv : permet de lire un contenu (fichier ou chaîne) contenant des données au format CSV. paramétrable.
+
+*** classes utilitaires supprimées
+   - celles du répertoire utils/copix/business, rendues obsolètes à cause de CopixDao
+
+*** Ajout de la gestion des profils. [NOTE: encore au statut Beta]
+
+*** corrections de bugs:
+   - ajout d'un flush aprés l'affichage d'un message d'erreur dans le gestionnaire d'erreur (sinon pas d'affichage quand il y a une redirection qui suit)
+   - suppression du warning lorsqu'aucun plugin n'est activé.
+   - test supplementaire de verification de fichier dans CopixCache::remove()
+
+Version 2.0.1
+
+- correction d'un bug dans CopixUrl::getUrl (le paramètre à la méthode n'etait pas pris en compte)
+
+- correction d'un bug dans CopixFileLocker : si le contenu à écrire est vide, ça partait en boucle infinie.

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="significanturl" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Jouanneau Laurent" email="ljouanneau@aston.fr" website="http://ljouanneau.com" role="creator" />
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+         apporte le support des URLs significatifs dans Copix : se charge du décodage des URLs (si besoin)
+         et de leurs encodages
+      </description>
+   </descriptions>
+
+   <infos />
+</plugin>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<daodefinition>
+   <datasource>
+      <tables>
+         <table name="copixmodule" primary="yes" />
+      </tables>
+   </datasource>
+
+ <properties>
+  <property name="name_cpm"
+         captioni18n="copix:copixmodule.dao.fields.name_cpm"
+         pk="true"
+         required="yes"
+         type="string"
+         maxlength="255"
+         />
+
+ </properties>
+</daodefinition>

@@ -1,0 +1,79 @@
+<script type="text/javascript">
+//<![CDATA[
+function doUrl (pUrl) {
+   var myForm = document.userEdit;
+   myForm.action = pUrl;
+   myForm.submit ();
+}
+//]]>
+</script>
+
+<?php
+   if (count ($errors)){
+       echo '<ul>';
+   }
+   foreach ($errors as $content){
+       echo "<li>$content</li>";
+   }
+   if (count ($errors)){
+      echo "</ul>";
+   }
+?>
+<form name="userEdit" action="<?php echo CopixUrl::get ("users|admin|valid") ?>" method="post" class="copixForm">
+   <h2><?php echo CopixI18N::get ("users.title.user") ?></h2>
+   <table class="CopixTable">
+      <?php foreach ($userProperties as $name=>$propertyInformations) { ?>
+         <tr>
+          <th><?php echo CopixI18N::get ($propertyInformations->captioni18n); ?></th>
+          <td><input name="<?php echo htmlentities($name); ?>"
+          type="<?php echo $name == $passwordfield ? 'password' : 'text'; ?>"
+          value="<?php if (isset ($user->$name)) echo htmlentities ($user->$name); ?>"
+          <?php if (($name === 'login') && ($user->is__new === false)) echo 'readonly="readonly"'; ?>/></td>
+         </tr>
+
+         <?php if ($name == $passwordfield) {// Vérification du mot de passe si besoin
+          ?>
+         <tr>
+          <th><?php echo CopixI18N::get ('copix:auth.action.confirmPassword'); ?></th>
+          <td><input name="check_password" type="password"" value="" /></td>
+         </tr>
+         <?php } ?>
+      <?php } ?>
+   </table>
+
+<?PHP
+/**
+   <h2><?php echo CopixI18N::get ("users.title.groups"); ?></h2>
+   <?php if (count($groups)) { ?>
+   <table class="CopixTable">
+   <thead>
+   <tr>
+     <th><?php echo CopixI18N::get ("users.title.groupName"); ?></th>
+     <th class="actions"><?php echo CopixI18N::get ("copix:common.actions.title"); ?></th>
+   </tr>
+   </thead>
+   <tbody>
+   <?php foreach ($groups as $item=>$group) { ?>
+   <tr>
+      <td><?php echo $group->name_cgrp; ?></td>
+      <td><a href="#" onclick="javascript:doUrl('<?php echo CopixUrl::get ("profile|admin|prepareEdit", array ('id'=>$group->id_cgrp)); ?>')"><img src="<?php CopixUrl::get (); ?>img/tools/show.png" alt="<?php echo CopixI18N::get ("copix:common.buttons.show"); ?>" /></a>
+          <?php if (($group->all_cgrp == false) && ($group->known_cgrp == false)) { ?>
+            <a href="#" onclick="javascript:doUrl('<?php echo CopixUrl::get ("users|admin|removeGroup", array ('id_cgrp'=>$group->id_cgrp)); ?>')"><img src="<?php CopixUrl::get (); ?>img/tools/delete.png" alt="<?php echo CopixI18N::get ("copix:common.buttons.delete"); ?>" /></a>
+          <?php } ?>
+      </td>
+   </tr>
+   <?php } ?>
+   </tbody>
+   </table>
+   <?php } ?>
+
+   <p>
+    <a href="#" onclick="javascript:doUrl('<?php echo CopixUrl::get ("users|admin|selectGroup"); ?>')"><img src="<?php echo CopixUrl::get (); ?>img/tools/add.png" alt="<?php echo CopixI18n::get ('copix:common.buttons.new'); ?>" /><?php echo CopixI18N::get ("copix:common.buttons.new"); ?></a>
+   </p>
+*/
+?>
+   <p>
+    <input type="submit" value="<?php echo CopixI18N::get ("copix:common.buttons.valid"); ?>" />
+    <input type="button" value="<?php echo CopixI18N::get ("copix:common.buttons.cancel"); ?>" onclick="javascript:document.location.href='<?php echo CopixURL::get ("users|admin|"); ?>'" />
+   </p>
+</form>

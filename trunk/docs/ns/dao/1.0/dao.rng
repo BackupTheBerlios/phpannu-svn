@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://copix.org/ns/dao/1.0">
+   <start>
+      <element name="daodefinition">
+         <attribute name="version">
+            <value>1.0</value>
+         </attribute>
+
+         <element name="datasource">
+            <element name="tables">
+               <oneOrMore>
+                  <ref name="table" />
+               </oneOrMore>
+            </element>
+            <optional>
+               <element name="connection">
+                  <attribute name="name" />
+                  <empty />
+               </element>
+            </optional>
+         </element>
+
+
+         <element name="properties">
+            <oneOrMore>
+               <ref name="property" />
+            </oneOrMore>
+         </element>
+
+         <optional>
+            <element name="methods">
+               <oneOrMore>
+                  <ref name="method" />
+               </oneOrMore>
+            </element>
+         </optional>
+      </element>
+   </start>
+
+
+
+   <define name="table">
+      <element name="table">
+         <attribute name="name" />
+         <choice>
+            <attribute name="primary">
+               <data type="boolean" />
+            </attribute>
+            <attribute name="join">
+               <list>
+                  <value>left</value>
+                  <value>right</value>
+                  <value>inner</value>
+               </list>
+            </attribute>
+         </choice>
+         <optional>
+            <attribute name="tablename" />
+         </optional>
+         <empty />
+      </element>
+   </define>
+
+
+
+   <define name="property">
+      <element name="property">
+         <attribute name="name" />
+         <attribute name="type">
+            <choice>
+               <value>autoincrement</value>
+               <value>bigautoincrement</value>
+               <value>int</value>
+               <value>integer</value>
+               <value>varchar</value>
+               <value>string</value>
+               <value>varchardate</value>
+               <value>date</value>
+               <value>numeric</value>
+               <value>double</value>
+               <value>float</value>
+            </choice>
+         </attribute>
+         <optional>
+            <attribute name="fieldname" />
+         </optional>
+         <optional>
+            <attribute name="table" />
+         </optional>
+         <optional>
+            <attribute name="required" />
+         </optional>
+         <optional>
+            <choice>
+               <attribute name="caption" />
+               <attribute name="captioni18n" />
+            </choice>
+         </optional>
+         <optional>
+            <attribute name="maxlength" />
+         </optional>
+         <optional>
+            <attribute name="regexp" />
+         </optional>
+         <optional>
+            <attribute name="pk">
+               <data type="boolean" />
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="fkTable" />
+            <attribute name="fkFieldName" />
+         </optional>
+         <optional>
+            <attribute name="sequence" />
+         </optional>
+         <optional>
+            <attribute name="updatemotif" />
+         </optional>
+         <optional>
+            <attribute name="insertmotif" />
+         </optional>
+         <optional>
+            <attribute name="selectmotif" />
+         </optional>
+        <empty />
+      </element>
+   </define>
+
+
+
+   <define name="method">
+      <element name="method">
+         <attribute name="name" />
+
+         <optional>
+            <element name="parameters">
+               <oneOrMore>
+                    <element name="parameter">
+                       <attribute name="name" />
+                       <empty />
+                    </element>
+               </oneOrMore>
+            </element>
+         </optional>
+
+         <choice>
+            <group>
+               <attribute name="type">
+                  <choice>
+                     <value>select</value>
+                     <value>selectfirst</value>
+                  </choice>
+               </attribute>
+               <ref name="methodconditions" />
+               <ref name="methodlimit" />
+               <ref name="methodorder" />
+            </group>
+
+            <group>
+               <attribute name="type">
+                     <value>delete</value>
+               </attribute>
+               <ref name="methodconditions" />
+               <ref name="methodlimit" />
+            </group>
+         </choice>
+      </element>
+   </define>
+
+   <define name="methodconditions">
+      <optional>
+         <ref name="methodconditions2" />
+      </optional>
+   </define>
+
+   <define name="methodconditions2">
+      <element name="conditions">
+         <optional>
+            <attribute name="logic">
+               <choice>
+                  <value>AND</value>
+                  <value>OR</value>
+               </choice>
+            </attribute>
+         </optional>
+
+         <oneOrMore>
+            <interleave>
+               <zeroOrMore>
+                  <ref name="methodconditions2" />
+               </zeroOrMore>
+               <element name="condition">
+                  <attribute name="property" />
+                  <attribute name="operator" />
+                  <attribute name="value" />
+                  <empty />
+               </element>
+            </interleave>
+         </oneOrMore>
+      </element>
+   </define>
+
+
+   <define name="methodorder">
+      <optional>
+         <element name="order">
+            <oneOrMore>
+               <element name="orderitem">
+                  <attribute name="property" />
+                  <attribute name="way">
+                     <choice>
+                        <value>desc</value>
+                        <value>asc</value>
+                     </choice>
+                  </attribute>
+                  <empty />
+               </element>
+            </oneOrMore>
+         </element>
+      </optional>
+   </define>
+
+
+   <define name="methodlimit">
+      <optional>
+         <element name="limit">
+            <attribute name="offset" />
+            <attribute name="count" />
+            <empty />
+         </element>
+      </optional>
+   </define>
+
+
+</grammar>

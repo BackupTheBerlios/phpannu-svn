@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<moduledefinition>
+    <general>
+        <default name="profile" descriptioni18n="profile.moduleDescription"/>
+        <package name="copix" version="2.2" />
+    </general>
+    <dependencies>
+        <dependency name="auth" kind="module"/>
+    </dependencies>
+    <parameters>
+       <parameter name="keepProfileInSession" captioni18n="profile.parameter.keepProfileInSession" default="1" />
+    </parameters>
+</moduledefinition>

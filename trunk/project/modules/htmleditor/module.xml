@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<moduledefinition>
+    <general>
+        <default name="htmleditor" descriptioni18n="htmleditor.description" />
+        <package name="copixdivers" version="2.2" />
+    </general>
+   <parameters>
+      <parameter name="height" captioni18n="htmleditor.parameter.height" default="450" />
+      <parameter name="width" captioni18n="htmleditor.parameter.width" default="480" />
+      <parameter name="type" captioni18n="htmleditor.parameter.type" default="fckeditor" />
+   </parameters>
+</moduledefinition>

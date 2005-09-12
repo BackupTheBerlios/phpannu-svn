@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!--
+@package	copix
+@subpackage profile
+@version	$Id: copixcapabilitypath.dao.definition.xml,v 1.5 2004/10/07 10:13:11 gcroes Exp $
+@author	Croes Gérald , Jouanneau Laurent
+@copyright 2001-2004 Aston S.A.
+@link		http://copix.aston.fr
+@licence  http://www.gnu.org/licenses/gpl.html GNU General Public Licence, see LICENCE file
+-->
+<daodefinition version="1.0">
+
+ <datasource>
+   <tables>
+      <table name="copixcapabilitypath" primary="yes" />
+   </tables>
+ </datasource>
+
+ <properties>
+  <property name="name_ccpt"
+         captioni18n="copix:profile.dao.CopixCapabilityPath.fields.name_ccpt"
+         pk="true"
+         required="yes"
+         type="varchar"
+         maxlength="255"
+         />
+
+  <property name="description_ccpt"
+         captioni18n="copix:profile.dao.CopixCapabilityPath.fields.description_ccpt"
+         type="varchar"
+         maxlength="255"
+         required="yes"
+         />
+ </properties>
+</daodefinition>

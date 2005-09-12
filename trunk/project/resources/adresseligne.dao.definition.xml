@@ -1,0 +1,32 @@
+<?xml version="1.0" ?>
+<daodefinition version="1">
+ <datasource>
+   <tables>
+      <table name="adresseLigne" tablename="adresse_ligne" primary="yes" />
+   </tables>
+   <connection name="annuaire" />
+ </datasource>
+
+ <properties>
+ 
+  <property name="id" fieldName="id"
+        caption="Identifiant"
+        type="autoincrement"
+        pk="true"
+        required="yes"
+        table="adresseLigne"
+         />
+  <property name="id_adresse" fieldName="id_adresse"
+        caption="id de l'adresse"
+        type="int"
+        required="yes"
+        table="adresseLigne"
+         />
+  <property name="valeur" fieldName="des"
+        caption="valeur de la ligne"
+        type="string"
+        required="no"
+        table="adresseLigne"
+         />
+ </properties>
+</daodefinition>

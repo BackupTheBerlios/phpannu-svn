@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://copix.org/ns/module/1.0">
+  <start>
+   <element name="moduledefinition">
+      <element name="general">
+         <element name="default">
+            <attribute name="name" />
+            <attribute name="descriptioni18n" />
+             <optional>
+                <attribute name="longdescriptioni18n" />
+             </optional>
+            <empty />
+         </element>
+         <element name="package">
+            <attribute name="name" />
+            <attribute name="version" />
+            <empty />
+         </element>
+      </element>
+      <optional>
+         <ref  name="parameters" />
+      </optional>
+      <optional>
+         <ref  name="dependencies" />
+      </optional>
+      <optional>
+         <ref  name="events" />
+      </optional>
+   </element>
+   </start>
+
+
+   <define name="parameters">
+      <element name="parameters">
+         <oneOrMore>
+            <element name="parameter">
+               <attribute name="name" />
+               <attribute name="default" />
+               <choice>
+                  <attribute name="caption" />
+                  <attribute name="captioni18n" />
+               </choice>
+               <empty />
+            </element>
+         </oneOrMore>
+      </element>
+   </define>
+
+
+
+   <define name="dependencies">
+      <element name="dependencies">
+         <oneOrMore>
+            <element name="dependency">
+               <attribute name="name" />
+               <attribute name="kind" />
+               <empty />
+            </element>
+         </oneOrMore>
+      </element>
+   </define>
+
+
+
+   <define name="events">
+      <element name="events">
+         <optional>
+            <element name="launch">
+                <oneOrMore>
+                <ref name="event" />
+                </oneOrMore>
+            </element>
+         </optional>
+         <element name="listeners">
+            <oneOrMore>
+               <element name="listener">
+                  <attribute name="name" />
+                  <oneOrMore>
+                     <element name="event">
+                        <attribute name="name" />
+                     </element>
+                  </oneOrMore>
+               </element>
+            </oneOrMore>
+         </element>
+      </element>
+   </define>
+
+   <define name="event">
+      <element name="event">
+         <optional>
+            <element name="params">
+               <oneOrMore>
+                  <element name="param">
+                     <attribute name="id" />
+                  </element>
+               </oneOrMore>
+            </element>
+         </optional>
+         <optional>
+            <element name="response">
+               <oneOrMore>
+                  <element name="information">
+                     <attribute name="name"/>
+                     <attribute name="type"/>
+                  </element>
+               </oneOrMore>
+            </element>
+         </optional>
+      </element>
+   </define>
+
+</grammar>

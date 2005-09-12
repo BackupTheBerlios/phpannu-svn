@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<grammar xmlns="http://relaxng.org/ns/structure/1.0"
+   datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
+    ns="http://copix.org/ns/plugin/1.0">
+ <start>
+   <element name="plugin">
+      <attribute name="name" />
+       <element name="version">
+          <attribute name="major" />
+          <attribute name="minor" />
+          <attribute name="status">
+             <choice>
+                <value>stable</value>
+                <value>unstable</value>
+             </choice>
+          </attribute>
+          <attribute name="copixversion" />
+          <attribute name="date" />
+          <empty/>
+       </element>
+
+       <optional>
+          <element name="authors">
+             <oneOrMore>
+                <element name="author">
+                   <attribute name="name" />
+                   <attribute name="email" />
+                   <attribute name="website" />
+                   <attribute name="role">
+                      <choice>
+                         <value>creator</value>
+                         <value>contributor</value>
+                      </choice>
+                   </attribute>
+                   <empty/>
+                </element>
+             </oneOrMore>
+          </element>
+       </optional>
+
+      <element name="descriptions">
+         <oneOrMore>
+            <element name="description">
+               <attribute name="lang" />
+               <text />
+            </element>
+         </oneOrMore>
+      </element>
+
+      <optional>
+         <element name="infos">
+            <text />
+         </element>
+      </optional>
+
+   </element>
+  </start>
+</grammar>

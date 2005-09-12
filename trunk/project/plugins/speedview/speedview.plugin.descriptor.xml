@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<plugin name="speedview" xmlns="http://copix.org/ns/plugin/1.0">
+   <version major="" minor="" status="" copixversion=""  date="" />
+   <authors>
+      <author name="Jouanneau Laurent" email="ljouanneau@aston.fr" website="http://ljouanneau.com" role="creator" />
+      <author name="Gerald Croes" email="gcroes@aston.fr" website="http://www.phpside.org" role="contributor" />
+   </authors>
+   <descriptions>
+      <description lang="fr">
+         calcul le temps d'execution du traitement d'une page copix. et l'affiche en bas de celle-ci ou log
+         dans un fichier.
+      </description>
+   </descriptions>
+   <infos />
+</plugin>
